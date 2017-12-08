@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"> </script>
+<script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.js"> </script>
+<script src="https://rawgit.com/angular-ui/angular-google-maps/2.1.5/dist/angular-google-maps.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+</head>
+<style>
+    .angular-google-map-container {
+        height: 170px;
+}
+</style>
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row-fulid">
+            <form class="form-inline">  
+                <label for="carrierNo">carrierNo</label>
+                <input type="text" class="form-control">
+                <input type="button" class="btn btn-primary" value="submit"></input>
+            </form>
+        </div>
+        <div class="row">
+                <div class="col-md-4" ng-controller="ChartCtrl">
+                    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
+                            </canvas>  
+                </div>
+                <div class="col-md-4">
+                        <div ng-controller="ChartCtrl">
+                                <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+                        </div>
+            </div>
+        </div>
+
+</div>
+    
+</body>
+<script src="js/chartController.js"></script>
+ <!-- <script src="js/googleMapController.js"></script> -->
+</html>
